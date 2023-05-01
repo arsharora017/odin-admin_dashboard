@@ -130,7 +130,17 @@ table {
 /* define variables on root */
 
 :root {
-  --background-color: #93c5fd;
+  font-family: "Roboto", sans-serif;
+
+  --primary-color: #084c61;
+  --gray-1: #fafaf9;
+  --gray-2: #e7e5e4;
+  --font-size-1: 1.2rem;
+  --font-size-2: 1.5rem;
+  --font-size-3: 1.3rem;
+
+  --image-size-1: 50px;
+  --image-size-2: 75px;
 }
 
 svg {
@@ -138,13 +148,14 @@ svg {
 }
 
 img {
-  width: 40px;
+  width: 50px;
 }
 
 /* setting grid on the main page */
 .main-page-container {
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 300px 3fr;
+  height: 100vh;
 }
 
 /* setting sidebar */
@@ -153,14 +164,21 @@ img {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: min-content;
-  row-gap: 30px;
-  margin: 5px;
-  background-color: var(--background-color);
+  row-gap: 40px;
+  background-color: var(--primary-color);
+  font-size: var(--font-size-1);
+  padding: 20px;
 }
 
 .sidebar-container > div > h1 {
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 40px 1fr;
+  color: var(--gray-1);
+  font-size: var(--font-size-2);
+}
+
+.sidebar-container > div > h1 > svg {
+  width: 40px;
 }
 
 .sidebar-container > div > h1 > span {
@@ -171,20 +189,24 @@ nav {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: min-content;
-  row-gap: 40px;
+  row-gap: 80px;
   /* padding: 5px; */
 }
 
-/* nav > ul {
+ul {
   display: grid;
-  grid-template-rows: min-content;
-} */
+  grid-template-rows: repeat(3, min-content);
+  row-gap: 20px;
+}
 
 nav > ul > li > a {
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 40px 1fr;
   grid-template-rows: min-content;
   padding: 5px;
+  color: var(--gray-1);
+  font-weight: 700;
+  font-size: var(--font-size-1);
 }
 
 nav > ul > li > a > span {
@@ -195,7 +217,21 @@ a {
   text-decoration: none;
 }
 
-/* setting header */
+/* right side of page */
+
+.right-side {
+  padding-left: 30px;
+  padding-top: 30px;
+  padding-right: 30px;
+}
+
+/* 
+**************
+------- setting header ------- 
+**************
+*/
+
+/* search section cell */
 
 header {
   display: grid;
@@ -203,8 +239,118 @@ header {
   grid-template-rows: repeat(2, 1fr);
 }
 
+.search-box {
+  display: grid;
+  padding: 5px;
+}
+
+.search-box > form {
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  grid-template-rows: min-content;
+  justify-self: center;
+  align-self: top;
+}
+
+.search-box > form > input {
+  width: 40vw;
+  height: 3vh;
+  border: none;
+  background-color: var(--gray-2);
+  border-radius: 1rem;
+}
+
+.search-box > form > input[type="text"] {
+  padding: 6px;
+}
+
+.search-box > form > span {
+  justify-self: center;
+  align-self: center;
+}
+
+/* user name / profile picture section / bell icon */
+
+.profile-container {
+  display: grid;
+  grid-template-columns: repeat(3, 80px);
+  grid-template-rows: min-content;
+  padding: 5px;
+  /* align-self: center; */
+  justify-self: center;
+}
+
+.profile-container > div {
+  justify-self: center;
+}
+
+.bell-icon,
+.profile-image,
+.name {
+  align-self: center;
+}
+
+.name {
+  padding-left: 3rem;
+}
+
+.name p {
+  font-size: large;
+  font-weight: 900;
+}
+
+/* profile handle */
+
+.profile-handle {
+  display: grid;
+  grid-template-columns: 100px 400px;
+}
+
+.profile-picture {
+  justify-self: center;
+  align-self: center;
+}
+
+.profile-picture img {
+  width: var(--image-size-2);
+}
+
+.handle {
+  display: grid;
+  align-self: center;
+  row-gap: 10px;
+}
+
+.handle-name {
+  font-size: var(--font-size-2);
+  font-weight: bolder;
+}
+
+/* buttons : new, upload and share */
+
+.buttons-container {
+  display: grid;
+  grid-template-columns: repeat(3, 150px);
+}
+
+.buttons-container button {
+  height: 40px;
+  width: 100px;
+  border: none;
+  border-radius: 20px;
+  background-color: var(--primary-color);
+  color: var(--gray-1);
+  font-size: 15px;
+}
+
+.buttons-container div {
+  align-self: center;
+  justify-self: center;
+}
+
 /* setting grid on projects container */
 main {
   display: grid;
   grid-template-columns: 3fr 1fr;
+  padding: 5px;
 }
