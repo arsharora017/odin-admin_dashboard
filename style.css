@@ -141,6 +141,8 @@ table {
 
   --image-size-1: 50px;
   --image-size-2: 75px;
+
+  --shadow-header: 0 4px 6px -1px rgb(0 0 0 / 0.4);
 }
 
 svg {
@@ -220,9 +222,7 @@ a {
 /* right side of page */
 
 .right-side {
-  padding-left: 30px;
-  padding-top: 30px;
-  padding-right: 30px;
+  padding-top: 20px;
 }
 
 /* 
@@ -237,6 +237,9 @@ header {
   display: grid;
   grid-template-columns: 3fr 2fr;
   grid-template-rows: repeat(2, 1fr);
+  padding-bottom: 20px;
+  padding-left: 20px;
+  box-shadow: var(--shadow-header);
 }
 
 .search-box {
@@ -348,9 +351,19 @@ header {
   justify-self: center;
 }
 
-/* setting grid on projects container */
+/* setting grid on main projects and aside container */
 main {
   display: grid;
   grid-template-columns: 3fr 1fr;
-  padding: 5px;
+  padding-top: 20px;
+  padding-left: 20px;
+}
+
+.projects-container {
+  display: grid;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: minmax(min-content, 1fr);
 }
