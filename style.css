@@ -135,6 +135,7 @@ table {
   --primary-color: #084c61;
   --gray-1: #fafaf9;
   --gray-2: #e7e5e4;
+  --gray-t: #68615c;
   --accent: #611d08;
   --font-size-1: 1.2rem;
   --font-size-2: 1.5rem;
@@ -362,6 +363,7 @@ main {
   grid-template-columns: 3fr 1fr;
   padding-top: 20px;
   padding-left: 20px;
+  padding-right: 30px;
   background-color: var(--gray-2);
   height: 100vh;
 }
@@ -372,15 +374,16 @@ main {
 }
 
 .heading {
-  height: 10px;
+  font-size: 1.3rem;
+  font-weight: bolder;
 }
 
 .project-cards {
   display: grid;
-  gap: 20px;
+  gap: 2rem;
   padding: 4px;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(3, 200px);
+  grid-template-rows: repeat(3, 220px);
 }
 
 .card {
@@ -390,18 +393,18 @@ main {
   background-color: var(--gray-1);
 }
 
-.card div:nth-child(1) {
+.card > div {
   padding: 10px;
-}
-
-.card div:nth-child(2) {
-  /* padding: 15px; */
 }
 
 .card > div > h3 {
   font-weight: bolder;
   font-size: 1.15rem;
   padding-bottom: 5px;
+}
+
+.card p {
+  color: var(--gray-t);
 }
 
 .project-cards .card {
@@ -426,4 +429,68 @@ main {
 
 .actions svg {
   background-color: var(--gray-1);
+}
+
+/* 
+********************
+Announcements and Trending ---- updates section 
+********************
+*/
+
+.updates {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+/* Announcements */
+
+.announcements > h3,
+.trending > h3 {
+  padding-bottom: 13px;
+}
+
+article {
+  padding: 10px;
+}
+
+.update {
+  padding: 15px 0;
+}
+
+.update + .update {
+  border-top: 2px solid var(--gray-2);
+}
+
+h4 {
+  margin-bottom: 0.25rem;
+  font-weight: bold;
+}
+
+/* Trending */
+.trending {
+  margin-top: 35px;
+}
+
+.handles-others {
+  display: flex;
+  align-items: center;
+}
+
+.handles-others > svg {
+  width: 50px;
+}
+
+.handles-others > div {
+  padding-left: 10px;
+
+  margin-bottom: 10px;
+}
+
+.handles-others > div > h5 {
+  padding-top: 5px;
+  padding-bottom: 3px;
+}
+
+.handles-others + .handles-others {
+  margin-top: 10px;
 }
