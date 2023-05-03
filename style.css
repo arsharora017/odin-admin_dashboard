@@ -135,6 +135,7 @@ table {
   --primary-color: #084c61;
   --gray-1: #fafaf9;
   --gray-2: #e7e5e4;
+  --accent: #611d08;
   --font-size-1: 1.2rem;
   --font-size-2: 1.5rem;
   --font-size-3: 1.3rem;
@@ -142,7 +143,8 @@ table {
   --image-size-1: 50px;
   --image-size-2: 75px;
 
-  --shadow-header: 0 4px 6px -1px rgb(0 0 0 / 0.4);
+  --shadow-header: 0 6px 12px -1px rgb(0 0 0 / 0.4);
+  --shadow-card: 0 4px 6px -1px rgb(0 0 0 / 0.1);
 }
 
 svg {
@@ -221,9 +223,10 @@ a {
 
 /* right side of page */
 
-.right-side {
+/* .right-side {
   padding-top: 20px;
-}
+  background-color: var(--gray-1);
+} */
 
 /* 
 **************
@@ -237,9 +240,11 @@ header {
   display: grid;
   grid-template-columns: 3fr 2fr;
   grid-template-rows: repeat(2, 1fr);
+  padding-top: 20px;
   padding-bottom: 20px;
   padding-left: 20px;
   box-shadow: var(--shadow-header);
+  background-color: var(--gray-1);
 }
 
 .search-box {
@@ -357,13 +362,68 @@ main {
   grid-template-columns: 3fr 1fr;
   padding-top: 20px;
   padding-left: 20px;
+  background-color: var(--gray-2);
+  height: 100vh;
 }
 
 .projects-container {
   display: grid;
+  grid-template-rows: 30px auto;
 }
 
-.cards {
+.heading {
+  height: 10px;
+}
+
+.project-cards {
   display: grid;
-  grid-template-columns: minmax(min-content, 1fr);
+  gap: 20px;
+  padding: 4px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 200px);
+}
+
+.card {
+  padding: 10px;
+  box-shadow: var(--shadow-card);
+  border-radius: 0.5rem;
+  background-color: var(--gray-1);
+}
+
+.card div:nth-child(1) {
+  padding: 10px;
+}
+
+.card div:nth-child(2) {
+  /* padding: 15px; */
+}
+
+.card > div > h3 {
+  font-weight: bolder;
+  font-size: 1.15rem;
+  padding-bottom: 5px;
+}
+
+.project-cards .card {
+  border-left: 10px solid var(--accent);
+  display: flex;
+  flex-direction: column;
+}
+
+.actions {
+  margin-top: auto;
+  display: flex;
+  align-self: flex-end;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.actions button {
+  border: none;
+  background-color: var(--gray-1);
+}
+
+.actions svg {
+  background-color: var(--gray-1);
 }
