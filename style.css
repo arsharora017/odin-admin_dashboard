@@ -125,7 +125,11 @@ table {
   border-spacing: 0;
 }
 
-/* My solution starts here */
+/* ***************************************************
+
+ ---------- My solution starts from here -----------
+
+****************************************************** */
 
 /* define variables on root */
 
@@ -133,8 +137,10 @@ table {
   font-family: "Roboto", sans-serif;
 
   --primary-color: #084c61;
+  --btn-hover: #0c6985;
   --gray-1: #fafaf9;
   --gray-2: #e7e5e4;
+  --gray-3: #c0bebd;
   --gray-t: #68615c;
   --accent: #611d08;
   --font-size-1: 1.2rem;
@@ -163,7 +169,9 @@ img {
   height: 100vh;
 }
 
-/* setting sidebar */
+/***************
+------- setting sidebar ------- 
+***************/
 
 .sidebar-container {
   display: grid;
@@ -195,7 +203,6 @@ nav {
   grid-template-columns: 1fr;
   grid-template-rows: min-content;
   row-gap: 80px;
-  /* padding: 5px; */
 }
 
 ul {
@@ -222,12 +229,11 @@ a {
   text-decoration: none;
 }
 
-/* right side of page */
+a:hover {
+  color: var(--gray-3);
+}
 
-/* .right-side {
-  padding-top: 20px;
-  background-color: var(--gray-1);
-} */
+/* right side of page */
 
 /* 
 **************
@@ -285,7 +291,6 @@ header {
   grid-template-columns: repeat(3, 80px);
   grid-template-rows: min-content;
   padding: 5px;
-  /* align-self: center; */
   justify-self: center;
 }
 
@@ -352,12 +357,18 @@ header {
   font-size: 15px;
 }
 
+.buttons-container button:hover {
+  background-color: var(--btn-hover);
+}
+
 .buttons-container div {
   align-self: center;
   justify-self: center;
 }
 
-/* setting grid on main projects and aside container */
+/*****************************************
+---setting grid on main projects and aside container
+*******************************************/
 main {
   display: grid;
   grid-template-columns: 3fr 1fr;
@@ -391,6 +402,11 @@ main {
   box-shadow: var(--shadow-card);
   border-radius: 0.5rem;
   background-color: var(--gray-1);
+  transition: all 0.4s;
+}
+
+.card:hover {
+  border: 2px solid var(--primary-color);
 }
 
 .card > div {
@@ -431,11 +447,9 @@ main {
   background-color: var(--gray-1);
 }
 
-/* 
-********************
+/********************
 Announcements and Trending ---- updates section 
-********************
-*/
+*********************/
 
 .updates {
   padding-right: 20px;
